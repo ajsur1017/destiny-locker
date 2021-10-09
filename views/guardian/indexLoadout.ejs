@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+<body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+        <div>
+            <a href="/user/logout"><button style="color: red">Logout</button></a>
+            <a href="/guardian"><button>Back to Main</button></a><br>
+            <a href="/guardian/new"><button>Create a new Loadout</button></a>
+            <% for (guardian of guardian) { %>
+            <article>
+                  <a> <%= guardian.class %> - <%= guardian.subClass %> - <%= guardian.loadoutName %></a><br>
+                 
+
+            </article>
+            <% } %>
+        </div>
+    </main>
+</body>
+
+</html>
