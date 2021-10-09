@@ -26,10 +26,11 @@ router.get("/indexFashion", (req, res) => {
         res.render("guardian/indexFashion.ejs", { guardianFashion })
     })
 })
-
-
-router.get("/new", (req, res) => {
-    res.render("guardian/new.ejs")
+router.get("/newLoadout", (req, res) => {
+    res.render("guardian/newLoadout.ejs")
+})
+router.get("/newFashion", (req, res) => {
+    res.render("guardian/newFashion.ejs")
 })
 
 router.post("/", (req, res) => {
