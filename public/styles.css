@@ -10,7 +10,10 @@ button {
     margin: 10px;
 }
 #body {
-    background-color:rgba(80, 78, 78, 0.274)
+    background-color:rgba(131, 128, 128, 0.274)
+}
+#main {
+    margin: 10px;
 }
 .loadoutLink {
     max-width: 250px;

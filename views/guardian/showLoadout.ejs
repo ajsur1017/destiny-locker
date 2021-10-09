@@ -1,2 +1,152 @@
-<!-- additions on artilce tag are with AlpinJS -->
-<h1>show loadout page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+    <body id="body">
+        <%- include("../partials/header.ejs") %>
+
+            <main id="main">
+                <div>
+                    <h1>
+                        <%= guardian.class %> - <%= guardian.subClass %>
+                    </h1>
+                    <p>
+                        <%= guardian.jump %> - <%= guardian.grenade %> - <%= guardian.classAbility %>
+                    </p>
+                    <h2>Weapons:</h2>
+                    <h5>
+                        <%= guardian.keneticWeapon %> - <%= guardian.energyWeapon %> - <%= guardian.heavyWeapon %>
+                    </h5>
+                    <table>
+                        <tr>
+                            <th>Mobility</th>
+                            <th>Resilience</th>
+                            <th>Recovery</th>
+                            <th>Discipline</th>
+                            <th>Intelect</th>
+                            <th>Strength</th>
+                        </tr>
+                        <td>
+                            <%= guardian.helmetMobility + guardian.gloveMobility + guardian.chestMobility +
+                                guardian.bootMobility + guardian.classItemMobility%>
+                        </td>
+                        <td>
+                            <%= guardian.helmetResilience + guardian.gloveResilience + guardian.chestResilience +
+                                guardian.bootResilience + guardian.classItemResilience %>
+                        </td>
+                        <td>
+                            <%= guardian.helmetRecovery + guardian.gloveRecovery + guardian.chestRecovery +
+                                guardian.bootRecovery + guardian.classItemRecovery %>
+                        </td>
+                        <td>
+                            <%= guardian.helmetDiscipline + guardian.gloveDiscipline + guardian.chestDiscipline +
+                                guardian.bootDiscipline + guardian.classItemDiscipline %>
+                        </td>
+                        <td>
+                            <%= guardian.helmetIntelect + guardian.gloveIntelect + guardian.chestIntelect +
+                                guardian.bootIntelect + guardian.classItemIntelect %>
+                        </td>
+                        <td>
+                            <%= guardian.helmetStrength + guardian.gloveStrength + guardian.chestStrength +
+                                guardian.bootStrength + guardian.classItemStrength %>
+                        </td>
+                    </table>
+                    <table>
+                        <tr>
+                            <th>Helmet</th>
+                            <th>Gloves</th>
+                            <th>Chest</th>
+                            <th>Boots</th>
+                            <th>Class Item</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%= guardian.helmMod1 %>
+                            </td>
+                            <td>
+                                <%= guardian.gloveMod1 %>
+                            </td>
+                            <td>
+                                <%= guardian.chestMod1 %>
+                            </td>
+                            <td>
+                                <%= guardian.bootMod1 %>
+                            </td>
+                            <td>
+                                <%= guardian.classItemMod1 %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%= guardian.helmMod2 %>
+                            </td>
+                            <td>
+                                <%= guardian.gloveMod2 %>
+                            </td>
+                            <td>
+                                <%= guardian.chestMod2 %>
+                            </td>
+                            <td>
+                                <%= guardian.bootMod2 %>
+                            </td>
+                            <td>
+                                <%= guardian.classItemMod2 %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%= guardian.helmMod3 %>
+                            </td>
+                            <td>
+                                <%= guardian.gloveMod3 %>
+                            </td>
+                            <td>
+                                <%= guardian.chestMod3 %>
+                            </td>
+                            <td>
+                                <%= guardian.bootMod3 %>
+                            </td>
+                            <td>
+                                <%= guardian.classItemMod3 %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%= guardian.helmMod4 %>
+                            </td>
+                            <td>
+                                <%= guardian.gloveMod4 %>
+                            </td>
+                            <td>
+                                <%= guardian.chestMod4 %>
+                            </td>
+                            <td>
+                                <%= guardian.bootMod4 %>
+                            </td>
+                            <td>
+                                <%= guardian.classItemMod4 %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%= guardian.helmMod5 %>
+                            </td>
+                            <td>
+                                <%= guardian.gloveMod5 %>
+                            </td>
+                            <td>
+                                <%= guardian.chestMod5 %>
+                            </td>
+                            <td>
+                                <%= guardian.bootMod5 %>
+                            </td>
+                            <td>
+                                <%= guardian.classItemMod5 %>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </main>
+    </body>
+
+</html>

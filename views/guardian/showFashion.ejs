@@ -1,1 +1,42 @@
-<h1>Show fashion page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+    <body id="body">
+        <%- include("../partials/header.ejs") %>
+
+            <main id="main">
+                <div>
+                    <h1><%= guardianFashion.fashionName %></h1>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Helmet</th>
+                            <th>Gloves</th>
+                            <th>Chest</th>
+                            <th>Boots</th>
+                            <th>Class Item</th>
+                        </tr>
+                        <tr>
+                            <td><b>Ornament</b></td>
+                            <td> <%= guardianFashion.helmOrnament %></td>
+                            <td><%= guardianFashion.gloveOrnament %></td>
+                            <td><%= guardianFashion.chestOrnament %></td>
+                            <td><%= guardianFashion.bootOrnament %></td>
+                            <td><%= guardianFashion.classItemOrnament %></td>
+                        </tr>
+                        <tr>
+                            <td><b>Shader</b></td>
+                            <td><%= guardianFashion.helmShader %></td>
+                            <td><%= guardianFashion.gloveShader %></td>
+                            <td><%= guardianFashion.chestShader %></td>
+                            <td><%= guardianFashion.bootShader %></td>
+                            <td><%= guardianFashion.classItemShader %></td>
+
+                        </tr>
+                    </table>
+                </div>
+            </main>
+    </body>
+
+</html>
