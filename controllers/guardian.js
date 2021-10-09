@@ -33,11 +33,11 @@ router.get("/newFashion", (req, res) => {
     res.render("guardian/newFashion.ejs")
 })
 
-router.post("/", (req, res) => {
+router.post("/newFashion", (req, res) => {
     // req.body.readyToEat = req.body.readyToEat === "on" ? true : false
     req.body.username = req.session.username
     Guardian.create(req.body, (err, guardian) => {
-        res.redirect("/guardian")
+        res.redirect("/guardian/indexFashion.ejs")
     })
 })
 

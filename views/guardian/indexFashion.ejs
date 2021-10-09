@@ -10,7 +10,7 @@
             <a href="/guardian/newFashion"><button>Create a new Fashion</button></a>
             <% for (guardianFashion of guardianFashion) { %>
             <article>
-                  <h2><a href="/guardian/fashion/<%= guardianFashion._id %>"> <%= guardianFashion.fashionName %></a></h2><br>
+                  <img src="<%=guardianFashion.url %>" alt="its broken" id="thumbnail"><h2><a href="/guardian/fashion/<%= guardianFashion._id %>"> <%= guardianFashion.fashionName %></a></h2><br>
                  
 
             </article>

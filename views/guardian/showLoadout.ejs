@@ -6,6 +6,7 @@
         <%- include("../partials/header.ejs") %>
 
             <main id="main">
+                <a href="/guardian/indexLoadout"><button>Back to Loadout Index</button></a><br>
                 <div>
                     <h1>
                         <%= guardian.class %> - <%= guardian.subClass %>
@@ -17,6 +18,8 @@
                     <h5>
                         <%= guardian.keneticWeapon %> - <%= guardian.energyWeapon %> - <%= guardian.heavyWeapon %>
                     </h5>
+                    <!-- <h2>Exotic:</h2>
+                    <h5><%= guardian.boot %></h5>  -->
                     <table>
                         <tr>
                             <th>Mobility</th>
@@ -145,6 +148,7 @@
                             </td>
                         </tr>
                     </table>
+                    
                 </div>
             </main>
     </body>

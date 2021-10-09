@@ -31,3 +31,7 @@ button {
 #subClassTitan, #subClassHunter, #subClassWarlock, #arcGrenade, #voidGrenade, #solarGrenade, #stasisGrenade{
     display: none;
 }
+#thumbnail {
+    height: 75px;
+    width: 75px;
+}

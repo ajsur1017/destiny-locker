@@ -6,6 +6,7 @@
         <%- include("../partials/header.ejs") %>
 
             <main id="main">
+                <a href="/guardian/indexFashion"><button>Back to Fashion Index</button></a><br>
                 <div>
                     <h1><%= guardianFashion.fashionName %></h1>
                     <table>
@@ -35,6 +36,7 @@
 
                         </tr>
                     </table>
+                    <img src="<%= guardianFashion.url%>" alt="its broken">
                 </div>
             </main>
     </body>

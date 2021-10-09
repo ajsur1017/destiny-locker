@@ -12,7 +12,7 @@ mongoose.connection.on("open", () => {
   ]
   const startGuardianFashion = [
     {
-      helmOrnament: "Iron Forerunner Helm", helmShader: "Mercury Vex Chrome", gloveOrnament: "Lightkin Gauntlets", gloveShader: "Mercury Vex Chrome", chestOrnament: "Devastation Complex", chestShader: "Mercury Vex Chrome", bootOrnament: "Dunemarchers - Hip Wader", bootShader: "Mercury Vex Chrome", classItemOrnament: "Iron Forerunner Mark", classItemShader: "Mercury Vex Chrome", fashionName: "Pvp", username: "test"
+      helmOrnament: "Iron Forerunner Helm", helmShader: "Mercury Vex Chrome", gloveOrnament: "Lightkin Gauntlets", gloveShader: "Mercury Vex Chrome", chestOrnament: "Devastation Complex", chestShader: "Mercury Vex Chrome", bootOrnament: "Dunemarchers - Hip Wader", bootShader: "Mercury Vex Chrome", classItemOrnament: "Iron Forerunner Mark", classItemShader: "Mercury Vex Chrome", fashionName: "Pvp", url: "https://i.imgur.com/xzo7bdD.png", username: "test"
     },
   ]
   const starterUser = {
