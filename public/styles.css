@@ -4,6 +4,14 @@
 #link:hover {
     color: #b00b69
 }
+button {
+    background-color: grey;
+    border-color: blue;
+    margin: 10px;
+}
+#body {
+    background-color:rgba(80, 78, 78, 0.274)
+}
 .loadoutLink {
     max-width: 250px;
     max-height: 250px;
@@ -16,4 +24,7 @@
 }
 .column {
     flex: 50%;
+}
+#subClassTitan, #subClassHunter, #subClassWarlock, #arcGrenade, #voidGrenade, #solarGrenade, #stasisGrenade{
+    display: none;
 }

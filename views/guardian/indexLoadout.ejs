@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head.ejs") %>
-<body>
+<body id="body">
     <%- include("../partials/header.ejs") %>
     <main>
         <div>
@@ -10,7 +10,7 @@
             <a href="/guardian/newLoadout"><button>Create a new Loadout</button></a>
             <% for (guardian of guardian) { %>
             <article>
-                  <a> <%= guardian.class %> - <%= guardian.subClass %> - <%= guardian.loadoutName %></a><br>
+                  <h2><a href="/guardian/loadout/<%= guardian._id %>"> <%= guardian.class %> - <%= guardian.subClass %> - <%= guardian.loadoutName %></a></h2><br>
                  
 
             </article>

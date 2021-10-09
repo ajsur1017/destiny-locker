@@ -7,9 +7,97 @@
 
             <main>
                 <div>
-                    <h1>New Loadout Page!</h1>
-                </div>
-            </main>
+                    <div id="classSelector">
+                        <label for="class">Select your Class and Subclass:</label>
+                        <select name="class" id="class">
+                            <option value="" disabled selected>Select</option>
+                            <option value="Titan" id="titan">Titan</option>
+                            <option value="Hunter" id="hunter">Hunter</option>
+                            <option value="Warlock" id="warlock">Warlock</option>
+                        </select>
+                    </div>
+                    <label for="subClass"></label>
+                    <div id="subClassTitan">
+                        <select name="subClass">
+                            <option value="" disabled selected>Subclass</option>
+                            <option value="Code of the Earthshaker">Code of the Earthshaker</option>
+                            <option value="Code of the Juggernaut">Code of the Juggernaut</option>
+                            <option value="Code of the Missile">Code of the Missile</option>
+                            <option value="Code of the Protector">Code of the Protector</option>
+                            <option value="Code of the Aggressor">Code of the Aggressor</option>
+                            <option value="Code of the Commander">Code of the Commander</option>
+                            <option value="Code of the Fire-Forged">Code of the Fire-Forged</option>
+                            <option value="Code of the Siegebreaker">Code of the Siegebreaker</option>
+                            <option value="Code of the Devastator">Code of the Devastator</option>
+                            <option value="Behemoth">Behemoth</option>
+                        </select>
+                    </div>
+                    <div id="titanGrenade">
+                        <select name="grenade" id="arcGrenade">
+                            <option value="" disabled selected>Grenade</option>
+                            <option value="Lightning Grenade">Lighting Grenade</option>
+                            <option value="Pulse Grenade">Pulse Grenade</option>
+                            <option value="Flashbang Grenade">Flashbang Grendade</option>
+                        </select>
+                        <select name="grenade" id="voidGrenade">
+                            <option value="" disabled selected>Grenade</option>
+                            <option value="Voidwall Grenade">Voidwall Grenade</option>
+                            <option value="Magnetic Grennade">Magnetic Grenade</option>
+                            <option value="Supressor Grenade">Supressor Grenade</option>                          
+                        </select>
+                        <select name="grenade" id="solarGrenade">
+                            <option value="" disabled selected>Grenade</option>
+                            <option value="Thermite Grenade">Thermite Grenade</option>
+                            <option value="Incindoary Grenade">Incindoary Grenade</option>
+                            <Option value="Fusion Grenade">Fusion Grenade</Option>
+                        </select>
+                    </div>
+                    <div id="subClassHunter"> <select name="subClass">
+                            <option value="" disabled selected>Hunter Subclass</option>
+                            <option value="Way of the Outlaw">Way of the Outlaw</option>
+                            <option value="Way of the Sharpshooter">Way of the Sharpshooter</option>
+                            <option value="Way of a Thousand Cuts">Way of a Thousand Cuts</option>
+                            <option value="Way of the Warrior">Way of the Warrior</option>
+                            <option value="Way of the Current">Way of the Current</option>
+                            <option value="Way of the Wind">Way of the Wind</option>
+                            <option value="Way of the Trapper">Way of the Trapper</option>
+                            <option value="Way of the Pathfinder">Way of the Pathfinder</option>
+                            <option value="Way of the Wraith">Way of the Wraith</option>
+                            <option value="Revenant">Revenant</option>
+                        </select>
+                    </div>
+                    <div id="subClassWarlock"> <select name="subClass">
+                            <option value="" disable selected>Warlock Subclass</option>
+                            <option value="Attunement of Sky">Attunement of Sky</option>
+                            <option value="Attunement of Flame">Attunement of Flame</option>
+                            <option value="Attunement of Grace">Attunement of Grace</option>
+                            <option value="Attunement of Conduction">Attunement of Conduction</option>
+                            <option value="Attunement of Elements">Attunement of Elements</option>
+                            <option value="Attunement of Control">Attunement of Control</option>
+                            <option value="Attunement of Chaos">Attunement of Chaos</option>
+                            <option value="Attunement of Hunger">Attunement of Hunger</option>
+                            <option value="Attunement of Fission">Attunement of Fission</option>
+                            <option value="Shadebinder">Shadebinder</option>
+                        </select>
+                    </div>
+
+
+    </body>
+    <script>
+        $(document).ready(function () {
+            $("#class").change(function () {
+                $("#subClassTitan").toggle();
+            });
+        });
+        $(document).ready(function () {
+            $("#subClassTitan").change(function () {
+                $("#arcGrenade").toggle()
+            })
+        })
+    </script>
+    </div>
+    </main>
     </body>
 
 </html>
+<!-- the selectors are NOT working as intended. jQuery needs attention -->

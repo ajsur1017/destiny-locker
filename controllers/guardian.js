@@ -63,10 +63,16 @@ router.delete("/:id", (req, res) => {
     })
 })
 
-router.get("/:id", (req, res) => {
+router.get("/loadout/:id", (req, res) => {
     const id = req.params.id
     Guardian.findById(id, (err, guardian) => {
-        res.render("guardian/show.ejs", { guardian })
+        res.render("guardian/showLoadout.ejs", { guardian })
+    })
+})
+router.get("/fashion/:id", (req, res) => {
+    const id = req.params.id
+    GuardianFashion.findById(id, (err, guardianFashion) => {
+        res.render("guardian/showFashion.ejs", { guardianFashion })
     })
 })
 

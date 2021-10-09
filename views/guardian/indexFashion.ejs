@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head.ejs") %>
-<body>
+<body id="body">
     <%- include("../partials/header.ejs") %>
     <main>
         <div>
@@ -10,7 +10,7 @@
             <a href="/guardian/newFashion"><button>Create a new Fashion</button></a>
             <% for (guardianFashion of guardianFashion) { %>
             <article>
-                  <a> <%= guardianFashion.fashionName %></a><br>
+                  <h2><a href="/guardian/fashion/<%= guardianFashion._id %>"> <%= guardianFashion.fashionName %></a></h2><br>
                  
 
             </article>
