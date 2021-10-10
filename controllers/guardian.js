@@ -40,7 +40,7 @@ router.get("/newFashion", (req, res) => {
 router.post("/indexFashion", (req, res) => {
     req.body.username = req.session.username
     GuardianFashion.create(req.body, (err, guardianFashion) => {
-        res.redirect("guardian/indexFashion.ejs")
+        res.redirect("/guardian/indexFashion")
     })
 })
 
