@@ -6,7 +6,7 @@
     <%- include("../partials/header.ejs") %>
 
       <main>
-        <a href="/guardian/indexLoadout"><button>Back to Loadout Index</button></a><br>
+        
         <p>Anything that does not apply to your loadout, leave blank.<br>Sorry, you can not alter you Class, Subclass,
           Jump, Grenade or Class Ability at this time.</p>
         <form action="/guardian/loadout/<%= guardian._id %>?_method=PUT" method="post">
