@@ -18,6 +18,20 @@ router.get("/login", (req, res) => {
     res.render("user/login.ejs")
 })
 
+
+// router.get("/:id/edit", (req, res) => {
+//     req.body.username = req.session.username
+//     const id = req.params.id
+//     User.findById(id, (err, user) => {
+//         res.render("user/editpassword.ejs", { user })
+//     })
+// })
+// router.put("/:id", (req, res) => {
+//     User.findByIdAndUpdate(id, (err, user) => {
+//         res.redirect("/guardian")
+//     })
+// })
+
 router.post("/login", (req, res) => {
     const { username, password } = req.body;
     User.findOne({ username }, (err, user) => {
@@ -41,5 +55,6 @@ router.get("/logout", (req, res) => {
         res.redirect("/")
     })
 });
+
 
 module.exports = router
