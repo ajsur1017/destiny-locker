@@ -5,36 +5,53 @@
   <body id="body">
     <%- include("../partials/header.ejs") %>
       <main>
-        
+
         <p>Anything that does not apply to your fashion, leave blank.</p>
         <form action="/guardian/fashion/<%= guardianFashion._id %>?_method=PUT" method="post">
           <fieldset>
             <legend>Edit Guardian Fashion</legend>
             <label>Name:</label>
-            <input type="text" name="fashionName" value="<%= guardianFashion.fashionName %>">
-            <label>Helmet Ornament:</label>
-            <input type="text" name="helmOrnament" value="<%= guardianFashion.helmOrnament %>">
-            <label>Helmet Shader:</label>
-            <input type="text" name="helmShader" value="<%= guardianFashion.helmShader %> ">
-            <label>Glove Ornament:</label>
-            <input type="text" name="gloveOrnament" value="<%= guardianFashion.gloveOrnament %> ">
-            <label>Glove Shader:</label>
-            <input type="text" name="gloveShader" value="<%= guardianFashion.gloveShader %>">
-            <label>Chest Ornament:</label>
-            <input type="text" name="chestOrnament" value="<%= guardianFashion.chestOrnament %>">
-            <label>Chest Shader:</label>
-            <input type="text" name="chestShader" value="<%= guardianFashion.chestShader %>">
-            <label>Boots Ornament:</label>
-            <input type="text" name="bootOrnament" value="<%= guardianFashion.bootOrnament %>">
-            <label>Boots Shader:</label>
-            <input type="text" name="bootShader" value="<%= guardianFashion.bootShader %>">
-            <label>Class Item Ornament:</label>
-            <input type="text" name="classItemOrnament" value="<%= guardianFashion.classItemOrnament %>">
-            <label>Class Item Shader:</label>
-            <input type="text" name="classItemShader" value="<%= guardianFashion.classItemShader %>">
-            <label>Image Url:</label>
-            <input type="text" name="url" value="<%= guardianFashion.url %> ">
-
+            <td><input type="text" name="fashionName" value="<%= guardianFashion.fashionName %>"></td>
+            <table>
+              <tr>
+                <th>Helmet Ornament:</th>
+                <th>Helmet Shader</th>
+              </tr>
+              <td><input type="text" name="helmOrnament" value="<%= guardianFashion.helmOrnament %>"></td>
+              <td><input type="text" name="helmShader" value="<%= guardianFashion.helmShader %> "></td>
+            </table>
+            <table>
+              <tr>
+                <th>Glove Ornament:</th>
+                <th>Glove Shader</th>
+              </tr>
+              <td><input type="text" name="gloveOrnament" value="<%= guardianFashion.gloveOrnament %>"></td>
+              <td><input type="text" name="gloveShader" value="<%= guardianFashion.gloveShader %> "></td>
+            </table>
+            <table>
+              <tr>
+                <th>Chest Ornament:</th>
+                <th>Chest Shader</th>
+              </tr>
+              <td><input type="text" name="chestOrnament" value="<%= guardianFashion.chestOrnament %>"></td>
+              <td><input type="text" name="chestShader" value="<%= guardianFashion.chestShader %> "></td>
+            </table>
+            <table>
+              <tr>
+                <th>Boot Ornament:</th>
+                <th>Boot Shader</th>
+              </tr>
+              <td><input type="text" name="bootOrnament" value="<%= guardianFashion.bootOrnament %>"></td>
+              <td><input type="text" name="bootShader" value="<%= guardianFashion.bootShader %> "></td>
+            </table>
+            <table>
+              <tr>
+                <th>Class Item Ornament:</th>
+                <th>Class Item Shader</th>
+              </tr>
+              <td><input type="text" name="classItemOrnament" value="<%= guardianFashion.classItemOrnament %>"></td>
+              <td><input type="text" name="classItemShader" value="<%= guardianFashion.classItemShader %> "></td>
+            </table>
             <button type="submit">Update Fashion</button>
           </fieldset>
 
