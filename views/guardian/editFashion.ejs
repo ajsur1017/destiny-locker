@@ -4,9 +4,46 @@
 
   <body>
     <%- include("../partials/header.ejs") %>
-
     <main>
-      <h1>edit page for fashion</h1>
+        <a href="/guardian/indexFashion"><button>Back to Fashion Index</button></a><br>
+        <p>Anything that does not apply to your fashion, leave blank.</p>
+      <form action="/guardian/<%= guardianFashion._id %>?_method=PUT" method="post">
+        <fieldset>
+            <legend>Edit Guardian Fashion</legend>
+            <label>Name:</label>
+            <input type="text" name="fashionName" value="<%= guardianFashion.fashionName %>">
+            <label>Helmet Ornament:</label>     
+            <input type="text" name="helmOrnament" value="<%= guardianFashion.helmOrnament %>">
+            <label>Helmet Shader:</label>
+            <input type="text" name="helmShader" value="<%= guardianFashion.helmShader %> ">
+            <label>Glove Ornament:</label>
+            <input type="text" name="gloveOrnament" value="<%= guardianFashion.gloveOrnament %> ">
+            <label>Glove Shader:</label>
+            <input type="text" name="gloveShader" value="<%= guardianFashion.gloveShader %>">
+            <label>Chest Ornament:</label>
+            <input type="text" name="chestOrnament" value="<%= guardianFashion.chestOrnament %>">
+            <label>Chest Shader:</label>
+            <input type="text" name="chestShader" value="<%= guardianFashion.chestShader %>">
+            <label>Boots Ornament:</label>
+            <input type="text" name="bootOrnament" value="<%= guardianFashion.bootOrnament %>">
+            <label>Boots Shader:</label>
+            <input type="text" name="bootShader" value="<%= guardianFashion.bootShader %>">
+            <label>Class Item Ornament:</label>
+            <input type="text" name="classItemOrnament" value="<%= guardianFashion.classItemOrnament %>">
+            <label>Class Item Shader:</label>
+            <input type="text" name="classItemShader" value="<%= guardianFashion.classItemShader %>">
+            <label>Image Url:</label>
+            <input type="text" name="url" value="<%= guardianFashion.url %> ">
+
+            <button type="submit">Update Fashion</button>
+        </fieldset>
+        
+    </form>
+    </main>
+  </body>
+</html>
+        
+    </form>
     </main>
   </body>
 </html>

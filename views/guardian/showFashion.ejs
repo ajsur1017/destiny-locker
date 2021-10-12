@@ -9,7 +9,9 @@
                 <a href="/user/logout"><button style="color: red">Logout</button></a>
                 <a href="/guardian/indexFashion"><button>Back to Fashion Index</button></a><br>
                 <div>
-                    <h1><%= guardianFashion.fashionName %></h1>
+                    <h1>
+                        <%= guardianFashion.fashionName %>
+                    </h1>
                     <table>
                         <tr>
                             <th></th>
@@ -21,27 +23,50 @@
                         </tr>
                         <tr>
                             <td><b>Ornament</b></td>
-                            <td> <%= guardianFashion.helmOrnament %></td>
-                            <td><%= guardianFashion.gloveOrnament %></td>
-                            <td><%= guardianFashion.chestOrnament %></td>
-                            <td><%= guardianFashion.bootOrnament %></td>
-                            <td><%= guardianFashion.classItemOrnament %></td>
+                            <td>
+                                <%= guardianFashion.helmOrnament %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.gloveOrnament %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.chestOrnament %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.bootOrnament %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.classItemOrnament %>
+                            </td>
                         </tr>
                         <tr>
                             <td><b>Shader</b></td>
-                            <td><%= guardianFashion.helmShader %></td>
-                            <td><%= guardianFashion.gloveShader %></td>
-                            <td><%= guardianFashion.chestShader %></td>
-                            <td><%= guardianFashion.bootShader %></td>
-                            <td><%= guardianFashion.classItemShader %></td>
+                            <td>
+                                <%= guardianFashion.helmShader %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.gloveShader %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.chestShader %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.bootShader %>
+                            </td>
+                            <td>
+                                <%= guardianFashion.classItemShader %>
+                            </td>
 
                         </tr>
                     </table>
                     <img src="<%= guardianFashion.url %>" alt="its broken"><br>
+
                     <a href="/guardian/<%= guardianFashion._id %>/edit"><button>Edit</button></a>
-                    <form action="/guardian/<%= guardianFashion._id %>?_method=DELETE " method="post">
-                        <input type="submit" value="Delete" style="color: red" />
-                    </form>
+
+                    <form action="/guardian/fashion/<%= guardianFashion._id %>?_method=DELETE " method="post">
+                    
+                    <button type="submit" value="Delete" style="color: red">DELETE</button>
+
                 </div>
             </main>
     </body>

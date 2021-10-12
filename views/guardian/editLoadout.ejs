@@ -9,7 +9,7 @@
         <a href="/guardian/indexFashion"><button>Back to Fashion Index</button></a><br>
       <form action="/guardian/<%= fruit._id %>?_method=PUT" method="post">
         <fieldset>
-            <legend>New Guardian Fashion</legend>
+            <legend>Edit Guardian Fashion</legend>
             <input type="text" name="fashionName" placeholder="Fashion Name">
             <input type="text" name="helmOrnament" placeholder="Helment Ornament">
             <input type="text" name="helmShader" placeholder="Helmet Shader">
@@ -24,6 +24,11 @@
             <input type="text" name="url" placeholder="Image Url!">
             <input type="submit" value="Create New Fashion">
         </fieldset>
+        <!-- <label
+              >Name:
+              <input type="text" name="name" placeholder="enter fruit name" 
+              value="<%= fruit.name %>"/>
+            </label> -->
     </form>
     </main>
   </body>

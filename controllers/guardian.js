@@ -53,7 +53,8 @@ router.post("/indexLoadout", (req, res) => {
 // EDIT ROUTES
 // FASHION EDIT
 router.get("/:id/edit", (req, res) => {
-    const id = req.params.id 
+    req.body.username = req.session.username
+    const id = req.params.id
     GuardianFashion.findById(id, (err, guardianFashion) => {
         res.render("guardian/editFashion.ejs", { guardianFashion })
     })
@@ -82,13 +83,13 @@ router.put("/:id", (req, res) => {
 // DELETE ROUTES
 // HOW DOES IT KNOW WHAT ONE TO USE? DOES IT TRY BOTH???Î›
 
-router.delete("/:id", (req, res) => {
+router.delete("/loadout/:id", (req, res) => {
     const id = req.params.id
     Guardian.findByIdAndRemove(id, (err, guardian) => {
         res.redirect("/guardian/indexLoadout")
     })
 })
-router.delete("/:id", (req, res) => {
+router.delete("/fashion/:id", (req, res) => {
     const id = req.params.id
     GuardianFashion.findByIdAndRemove(id, (err, guardianFashion) => {
         res.redirect("/guardian/indexFashion")

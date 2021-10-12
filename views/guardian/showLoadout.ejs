@@ -150,8 +150,10 @@
                         </tr>
                     </table>
                     <a href="/guardian/<%= guardian._id %>/edit"><button>Edit</button></a>
-                    <form action="/guardian/<%= guardian._id %>?_method=DELETE " method="post">
-                        <input type="submit" value="Delete" style="color: red" />
+                    <form action="/guardian/Loadout/<%= guardian._id %>?_method=DELETE " method="post">
+                       
+                    <button type="submit" value="Delete" style="color: red;">DELETE</button> 
+                    
                     </form>
                     
                 </div>
