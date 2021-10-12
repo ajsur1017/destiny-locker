@@ -1,23 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head.ejs") %>
+<%- include("../partials/head.ejs") %>
 
   <body id="body">
     <%- include("../partials/header.ejs") %>
 
-    <main>
+      <main>
         <a href="/guardian/indexLoadout"><button>Back to Loadout Index</button></a><br>
-      
-        <fieldset>
-            <legend>Edit Guardian LOADOUT MOTHER FUCKER</legend>
-           
-        </fieldset>
+        <p>Anything that does not apply to your loadout, leave blank.<br>Sorry, you can not alter you Class, Subclass,
+          Jump, Grenade or Class Ability at this time.</p>
+        <form action="/guardian/loadout/<%= guardian._id %>?_method=PUT" method="post">
+          <h1>
+            <%= guardian.class %> - <%= guardian.subClass %>
+          </h1>
+          <p>
+            <%= guardian.jump %> - <%= guardian.grenade %> - <%= guardian.classAbility %>
+          </p>
+
+          <h4>Edit Loadout:</h4>
+          <legend>Loadout Name:</legend>
+          <input type="text" name="loadoutName" value="<%= guardian.loadoutName %>">
+          <h4>Weapons:</h4>
+          <table>
+            <tr>
+              <th>Kenetic Weapon:</th>
+              <th>Kenetic Weapon Mod:</th>
+            </tr>
+            <td><input type="text" name="keneticWeapon" value="<%= guardian.keneticWeapon %>"></td>
+            <td><input type="text" name="keneticWeaponMod" value="<%= guardian.keneticWeaponMod %>"></td>
+          </table>
+          <table>
+            <tr>
+              <th>Energy Weapon:</th>
+              <th>Energy Weapon Mod:</th>
+            </tr>
+            <td><input type="text" name="energyWeapon" value="<%= guardian.energyWeapon %>"></td>
+            <td><input type="text" name="energyWeaponMod" value="<%= guardian.energyWeaponMod %>"></td>
+          </table>
+          <table>
+            <tr>
+              <th>Heavy Weapon:</th>
+              <th>Heavy Weapon Mod:</th>
+            </tr>
+            <td><input type="text" name="heavyWeapon" value="<%= guardian.heavyWeapon %>"></td>
+            <td><input type="text" name="heavyWeaponMod" value="<%= guardian.heavyWeaponMod %>"></td>
+          </table>
+          <table>
+            <tr>
+              <th>Helmet</th>
+              <th>Gloves</th>
+              <th>Chest</th>
+              <th>Boots</th>
+              <th>Class Item</th>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="helmetMod1" value="<%= guardian.helmMod1 %>">
+              </td>
+              <td>
+                <input type="text" name="gloveMod1" value="<%= guardian.gloveMod1 %>">
+              </td>
+              <td>
+                <input type="text" name="chestMod1" value="<%= guardian.chestMod1 %>">
+              </td>
+              <td>
+                <input type="text" name="bootMod1" value="<%= guardian.bootMod1 %>">
+              </td>
+              <td>
+                <input type="text" name="classItemMod1" value="<%= guardian.classItemMod1 %>">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="helmetMod2" value="<%= guardian.helmMod2 %>">
+              </td>
+              <td>
+                <input type="text" name="gloveMod2" value="<%= guardian.gloveMod2 %>">
+              </td>
+              <td>
+                <input type="text" name="chestMod2" value="<%= guardian.chestMod2 %>">
+              </td>
+              <td>
+                <input type="text" name="bootMod2" value="<%= guardian.bootMod2 %>">
+              </td>
+              <td>
+                <input type="text" name="classItemMod2" value="<%= guardian.classItemMod2 %>">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="helmetMod3" value="<%= guardian.helmMod3 %>">
+              </td>
+              <td>
+                <input type="text" name="gloveMod3" value="<%= guardian.gloveMod3%>">
+              </td>
+              <td>
+                <input type="text" name="chestMod3" value="<%= guardian.chestMod3 %>">
+              </td>
+              <td>
+                <input type="text" name="bootMod3" value="<%= guardian.bootMod3 %>">
+              </td>
+              <td>
+                <input type="text" name="classItemMod3" value="<%= guardian.classItemMod3 %>">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="helmetMod4" value="<%= guardian.helmMod4 %>">
+              </td>
+              <td>
+                <input type="text" name="gloveMod4" value="<%= guardian.gloveMod4 %>">
+              </td>
+              <td>
+                <input type="text" name="chestMod4" value="<%= guardian.chestMod4 %>">
+              </td>
+              <td>
+                <input type="text" name="bootMod4" value="<%= guardian.bootMod4 %>">
+              </td>
+              <td>
+                <input type="text" name="classItemMod4" value="<%= guardian.classItemMod4 %>">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="helmetMod5" value="<%= guardian.helmMod5 %>">
+              </td>
+              <td>
+                <input type="text" name="gloveMod5" value="<%= guardian.gloveMod5 %>">
+              </td>
+              <td>
+                <input type="text" name="chestMod5" value="<%= guardian.chestMod5 %>">
+              </td>
+              <td>
+                <input type="text" name="bootMod5" value="<%= guardian.bootMod5 %>">
+              </td>
+              <td>
+                <input type="text" name="classItemMod5" value="<%= guardian.classItemMod5 %>">
+              </td>
+            </tr>
+          </table>
+          <button type="submit">Update Loadout</button>
+        </form>
 
 
 
-        
-        
-    </form>
-    </main>
+
+
+
+
+
+
+        </form>
+      </main>
   </body>
+
 </html>
