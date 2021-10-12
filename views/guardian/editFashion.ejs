@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head.ejs") %>
+<%- include("../partials/head.ejs") %>
 
   <body>
     <%- include("../partials/header.ejs") %>
-    <main>
+      <main>
         <a href="/guardian/indexFashion"><button>Back to Fashion Index</button></a><br>
         <p>Anything that does not apply to your fashion, leave blank.</p>
-      <form action="/guardian/<%= guardianFashion._id %>?_method=PUT" method="post">
-        <fieldset>
+        <form action="/guardian/fashion/<%= guardianFashion._id %>?_method=PUT" method="post">
+          <fieldset>
             <legend>Edit Guardian Fashion</legend>
             <label>Name:</label>
             <input type="text" name="fashionName" value="<%= guardianFashion.fashionName %>">
-            <label>Helmet Ornament:</label>     
+            <label>Helmet Ornament:</label>
             <input type="text" name="helmOrnament" value="<%= guardianFashion.helmOrnament %>">
             <label>Helmet Shader:</label>
             <input type="text" name="helmShader" value="<%= guardianFashion.helmShader %> ">
@@ -36,14 +36,16 @@
             <input type="text" name="url" value="<%= guardianFashion.url %> ">
 
             <button type="submit">Update Fashion</button>
-        </fieldset>
-        
-    </form>
-    </main>
+          </fieldset>
+
+        </form>
+      </main>
   </body>
+
 </html>
-        
-    </form>
-    </main>
-  </body>
+
+</form>
+</main>
+</body>
+
 </html>

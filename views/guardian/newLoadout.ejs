@@ -10,17 +10,17 @@
                         var selectedVal = this.value
                         // console.log(selectedVal)
                         if (selectedVal == "Titan") {
-                            $("#subClassTitanDiv").show();
-                            $("#subClassWarlockDiv").hide();
-                            $("#subClassHunterDiv").hide();
+                            $("#subClassTitanDiv").show()
+                            $("#subClassWarlockDiv").remove();
+                            $("#subClassHunterDiv").remove();
                         } else if (selectedVal == "Hunter") {
-                            $("#subClassTitanDiv").hide();
-                            $("#subClassWarlockDiv").hide();
+                            $("#subClassTitanDiv").remove();
+                            $("#subClassWarlockDiv").remove();
                             $("#subClassHunterDiv").show();
                         } else if (selectedVal == "Warlock") {
-                            $("#subClassTitanDiv").hide();
+                            $("#subClassTitanDiv").remove();
                             $("#subClassWarlockDiv").show();
-                            $("#subClassHunterDiv").hide();
+                            $("#subClassHunterDiv").remove();
                         }
                     })
                 })
@@ -29,9 +29,9 @@
             </script>
 
             <main>
-                
-                    <a href="/guardian/indexLoadout"><button>Back to Loadout Index</button></a><br>
-                    <p>Anything that does not apply to your loadout, leave blank.</p>
+
+                <a href="/guardian/indexLoadout"><button>Back to Loadout Index</button></a><br>
+                <p>Anything that does not apply to your loadout, leave blank.</p>
                 <form action="/guardian/indexLoadout" method="post">
                     <label for="name">Name:</label>
                     <input type="text" name="loadoutName" placeholder="Give Your Loadout a Name">
@@ -211,21 +211,21 @@
                             <option value="Void">Void</option>
                             <option value="Stasis">Stasis</option>
                         </select>
-                        <fieldset id="loadoutField" class="row">
+                        <div id="loadoutField" class="row">
                             <input type="number" name="helmetMobility" placeholder="Helmet Mobility">
                             <input type="number" name="helmetResilience" placeholder="Helmet Resilience">
                             <input type="number" name="helmetRecovery" placeholder="Helmet Recovery">
                             <input type="number" name="helmetDiscipline" placeholder="Helmet Discipline">
                             <input type="number" name="helmetIntelect" placeholder="Helmet Intelect">
                             <input type="number" name="helmetStrength" placeholder="Helmet Strength">
-                        </fieldset>
-                        <fieldset id="loadoutField2" class="row">
+                        </div>
+                        <div id="loadoutField2" class="row">
                             <input type="text" name="helmMod1" placeholder="Helmet Mod 1">
                             <input type="text" name="helmMod2" placeholder="Helmet Mod 2">
                             <input type="text" name="helmMod3" placeholder="Helmet Mod 3">
                             <input type="text" name="helmMod4" placeholder="Helmet Mod 4">
                             <input type="text" name="helmMod5" placeholder="Helmet Mod 5">
-                        </fieldset>
+                        </div>
 
                         <label for="gloves">Gloves:</label>
                         <input type="text" name="glove" placeholder="Armour Name">
@@ -236,21 +236,21 @@
                             <option value="Void">Void</option>
                             <option value="Stasis">Stasis</option>
                         </select>
-                        <fieldset id="loadoutField" class="row">
+                        <div id="loadoutField" class="row">
                             <input type="number" name="gloveMobility" placeholder="Glove Mobility">
                             <input type="number" name="gloveResilience" placeholder="Glove Resilience">
                             <input type="number" name="gloveRecovery" placeholder="Glove Recovery">
                             <input type="number" name="gloveDiscipline" placeholder="Glove Discipline">
                             <input type="number" name="gloveIntelect" placeholder="Glove Intelect">
                             <input type="number" name="gloveStrength" placeholder="Glove Strength">
-                        </fieldset>
-                        <fieldset id="loadoutField" class="row">
+                        </div>
+                        <div id="loadoutField" class="row">
                             <input type="text" name="gloveMod1" placeholder="Glove Mod 1">
                             <input type="text" name="gloveMod2" placeholder="Glove Mod 2">
                             <input type="text" name="gloveMod3" placeholder="Glove Mod 3">
                             <input type="text" name="gloveMod4" placeholder="Glove Mod 4">
                             <input type="text" name="gloveMod5" placeholder="Glove Mod 5">
-                        </fieldset>
+                        </div>
                         <label for="Chest">Chest:</label>
                         <input type="text" name="chest" placeholder="Arour Name">
                         <select name="chestEnergyType">
@@ -260,21 +260,21 @@
                             <option value="Void">Void</option>
                             <option value="Stasis">Stasis</option>
                         </select>
-                        <fieldset id="loadoutField" class="row">
+                        <div id="loadoutField" class="row">
                             <input type="number" name="chestMobility" placeholder="Chest Mobility">
                             <input type="number" name="chestResilience" placeholder="Chest Resilience">
                             <input type="number" name="chestRecovery" placeholder="Chest Recovery">
                             <input type="number" name="chestDiscipline" placeholder="Chest Discipline">
                             <input type="number" name="chestIntelect" placeholder="Chest Intelect">
                             <input type="number" name="chestStrength" placeholder="Chest Strength">
-                        </fieldset>
-                        <fieldset id="loadoutField" class="row">
+                        </div>
+                        <div id="loadoutField" class="row">
                             <input type="text" name="chestMod1" placeholder="Chest Mod 1">
                             <input type="text" name="chestMod2" placeholder="Chest Mod 2">
                             <input type="text" name="chestMod3" placeholder="Chest Mod 3">
                             <input type="text" name="chestMod4" placeholder="Chest Mod 4">
                             <input type="text" name="chestMod5" placeholder="Chest Mod 5">
-                        </fieldset>
+                        </div>
                         <label for="boots">Boots:</label>
                         <input type="text" name="boot" placeholder="Armour Name">
                         <select name="bootEnergyType">
@@ -284,21 +284,21 @@
                             <option value="Void">Void</option>
                             <option value="Stasis">Stasis</option>
                         </select>
-                        <fieldset id="loadoutField" class="row">
+                        <div id="loadoutField" class="row">
                             <input type="number" name="bootMobility" placeholder="Boot Mobility">
                             <input type="number" name="bootResilience" placeholder="Boot Resilience">
                             <input type="number" name="bootRecovery" placeholder="Boot Recovery">
                             <input type="number" name="bootDiscipline" placeholder="Boot Discipline">
                             <input type="number" name="bootIntelect" placeholder="Boot Intelect">
                             <input type="number" name="bootStrength" placeholder="Boot Strength">
-                        </fieldset>
-                        <fieldset id="loadoutField" class="row">
+                        </div>
+                        <div id="loadoutField" class="row">
                             <input type="text" name="bootMod1" placeholder="Boot Mod 1">
                             <input type="text" name="bootMod2" placeholder="Boot Mod 2">
                             <input type="text" name="bootMod3" placeholder="Boot Mod 3">
                             <input type="text" name="bootMod4" placeholder="Boot Mod 4">
                             <input type="text" name="bootMod5" placeholder="Boot Mod 5">
-                        </fieldset>
+                        </div>
                         <label for="Class Item">Class Item:</label>
                         <input type="text" name="classItem" placeholder="Armour Name">
                         <select name="classItemEnergyType">
@@ -308,22 +308,23 @@
                             <option value="Void">Void</option>
                             <option value="Stasis">Stasis</option>
                         </select>
-                        <fieldset id="loadoutField" class="row">
+                        <div id="loadoutField" class="row">
                             <input type="number" name="classItemMobility" placeholder="Class Item Mobility">
                             <input type="number" name="classItemResilience" placeholder="Class Item Resilience">
                             <input type="number" name="classItemRecovery" placeholder="Class Item Recovery">
                             <input type="number" name="classItemDiscipline" placeholder="Class Item Discipline">
                             <input type="number" name="classItemIntelect" placeholder="Class Item Intelect">
                             <input type="number" name="classItemStrength" placeholder="Class Item Strength">
-                        </fieldset>
-                        <fieldset id="loadoutField" class="row">
+                        </div>
+                        <div id="loadoutField" class="row">
                             <input type="text" name="classItemMod1" placeholder="Class Item Mod 1">
                             <input type="text" name="classItemMod2" placeholder="Class Item Mod 2">
                             <input type="text" name="classItemMod3" placeholder="Class Item Mod 3">
                             <input type="text" name="classItemMod4" placeholder="Class Item Mod 4">
                             <input type="text" name="classItemMod5" placeholder="Class Item Mod 5">
-                        </fieldset>
-                        <input type="submit" value="Create New Loadout">
+                        </div>
+                        <button type="submit">Create New Loadout</button>
+
                     </div>
                 </form>
 
@@ -338,4 +339,3 @@
     </body>
 
 </html>
-<!-- the selectors are NOT working as intended. jQuery needs attention -->

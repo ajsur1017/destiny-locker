@@ -52,7 +52,7 @@ router.post("/indexLoadout", (req, res) => {
 })
 // EDIT ROUTES
 // FASHION EDIT
-router.get("/:id/edit", (req, res) => {
+router.get("/fashion/:id/edit", (req, res) => {
     req.body.username = req.session.username
     const id = req.params.id
     GuardianFashion.findById(id, (err, guardianFashion) => {
@@ -60,28 +60,27 @@ router.get("/:id/edit", (req, res) => {
     })
 })
 
-router.put("/:id", (req, res) => {
+router.put("/fashion/:id", (req, res) => {
     const id = req.params.id
     GuardianFashion.findByIdAndUpdate(id, req.body, { new: true }, (err, guardianFashion) => {
         res.redirect("/guardian/indexFashion")
     })
 })
-// // LOADOUT EDIT
-// router.get("guardian/loadout/:id/edit", (req, res) => {
-//     const id = req.params.id 
-//     Guardian.findById(id, (err, guardian) => {
-//         res.render("guardian/editLoadout.ejs", { guardian })
-//     })
-// })
+// LOADOUT EDIT
+router.get("/loadout/:id/edit", (req, res) => {
+    const id = req.params.id 
+    Guardian.findById(id, (err, guardian) => {
+        res.render("guardian/editLoadout.ejs", { guardian })
+    })
+})
 
-// router.put("/:id", (req, res) => {
-//     const id = req.params.id
-//     Guardian.findByIdAndUpdate(id, req.body, { new: true }, (err, guardian) => {
-//         res.redirect("/guardian/indexLoadout")
-//     })
-// })
+router.put("/loadout/:id", (req, res) => {
+    const id = req.params.id
+    Guardian.findByIdAndUpdate(id, req.body, { new: true }, (err, guardian) => {
+        res.redirect("/guardian/indexLoadout")
+    })
+})
 // DELETE ROUTES
-// HOW DOES IT KNOW WHAT ONE TO USE? DOES IT TRY BOTH???Î›
 
 router.delete("/loadout/:id", (req, res) => {
     const id = req.params.id

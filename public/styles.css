@@ -13,6 +13,13 @@ button {
     background-color:rgba(131, 128, 128, 0.274);
     margin: 10px;
 }
+#mainBody {
+    background-image: url("https://lordsofgaming.net/wp-content/uploads/2019/06/Bungie-Transmog.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin: 10px;
+    color: white;
+}
 #main {
     margin: 10px;
 }
