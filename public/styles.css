@@ -7,10 +7,11 @@
 button {
     background-color: grey;
     border-color: blue;
-    margin: 10px;
+    
 }
 #body {
-    background-color:rgba(131, 128, 128, 0.274)
+    background-color:rgba(131, 128, 128, 0.274);
+    margin: 10px;
 }
 #main {
     margin: 10px;
@@ -24,14 +25,19 @@ button {
 }
 .row {
     display: flex;
+    margin-left: 10px;
+    margin-bottom: -5px;
 }
 .column {
     flex: 50%;
 }
-#subClassTitan, #subClassHunter, #subClassWarlock, #arcGrenade, #voidGrenade, #solarGrenade, #stasisGrenade{
+#subClassTitanDiv, #subClassHunterDiv, #subClassWarlockDiv {
     display: none;
 }
 #thumbnail {
     height: 125px;
     width: 75px;
+}
+:placeholder-shown {
+    color: black;
 }

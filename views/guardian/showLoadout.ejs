@@ -5,7 +5,8 @@
     <body id="body">
         <%- include("../partials/header.ejs") %>
 
-            <main id="main">
+            <main>
+                <a href="/user/logout"><button style="color: red">Logout</button></a>
                 <a href="/guardian/indexLoadout"><button>Back to Loadout Index</button></a><br>
                 <div>
                     <h1>
@@ -148,6 +149,10 @@
                             </td>
                         </tr>
                     </table>
+                    <a href="/guardian/<%= guardian._id %>/edit"><button>Edit</button></a>
+                    <form action="/guardian/<%= guardian._id %>?_method=DELETE " method="post">
+                        <input type="submit" value="Delete" style="color: red" />
+                    </form>
                     
                 </div>
             </main>

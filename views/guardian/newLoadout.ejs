@@ -2,13 +2,41 @@
 <html lang="en">
 <%- include("../partials/head.ejs") %>
 
-    <body>
+    <body id="body">
         <%- include("../partials/header.ejs") %>
+            <script>
+                $(document).ready(function () {
+                    $("#class").change(function () {
+                        var selectedVal = this.value
+                        // console.log(selectedVal)
+                        if (selectedVal == "Titan") {
+                            $("#subClassTitanDiv").show();
+                            $("#subClassWarlockDiv").hide();
+                            $("#subClassHunterDiv").hide();
+                        } else if (selectedVal == "Hunter") {
+                            $("#subClassTitanDiv").hide();
+                            $("#subClassWarlockDiv").hide();
+                            $("#subClassHunterDiv").show();
+                        } else if (selectedVal == "Warlock") {
+                            $("#subClassTitanDiv").hide();
+                            $("#subClassWarlockDiv").show();
+                            $("#subClassHunterDiv").hide();
+                        }
+                    })
+                })
+
+
+            </script>
 
             <main>
-                <div>
+                
+                    <a href="/guardian/indexLoadout"><button>Back to Loadout Index</button></a><br>
+                    <p>Anything that does not apply to your loadout, leave blank.</p>
+                <form action="/guardian/indexLoadout" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" name="loadoutName" placeholder="Give Your Loadout a Name">
                     <div id="classSelector">
-                        <label for="class">Select your Class and Subclass:</label>
+                        <label for="class">Select your Class</label>
                         <select name="class" id="class">
                             <option value="" disabled selected>Select</option>
                             <option value="Titan" id="titan">Titan</option>
@@ -16,87 +44,297 @@
                             <option value="Warlock" id="warlock">Warlock</option>
                         </select>
                     </div>
-                    <label for="subClass"></label>
-                    <div id="subClassTitan">
-                        <select name="subClass">
+                    <div id="subClassTitanDiv">
+                        <select name="subClass" id="subClassTitan">
                             <option value="" disabled selected>Subclass</option>
+                            <option value="" disabled>-Arc-</option>
                             <option value="Code of the Earthshaker">Code of the Earthshaker</option>
                             <option value="Code of the Juggernaut">Code of the Juggernaut</option>
                             <option value="Code of the Missile">Code of the Missile</option>
-                            <option value="Code of the Protector">Code of the Protector</option>
-                            <option value="Code of the Aggressor">Code of the Aggressor</option>
-                            <option value="Code of the Commander">Code of the Commander</option>
+                            <option value="" disabled>-Solar-</option>
                             <option value="Code of the Fire-Forged">Code of the Fire-Forged</option>
                             <option value="Code of the Siegebreaker">Code of the Siegebreaker</option>
                             <option value="Code of the Devastator">Code of the Devastator</option>
+                            <option value="" disabled>-Void-</option>
+                            <option value="Code of the Protector">Code of the Protector</option>
+                            <option value="Code of the Aggressor">Code of the Aggressor</option>
+                            <option value="Code of the Commander">Code of the Commander</option>
+                            <option value="" disabled>-Stasis-</option>
                             <option value="Behemoth">Behemoth</option>
                         </select>
-                    </div>
-                    <div id="titanGrenade">
-                        <select name="grenade" id="arcGrenade">
+                        <select name="grenade" id="titanGrenade">
                             <option value="" disabled selected>Grenade</option>
+                            <option value="" disabled>-Arc Grenades-</option>
                             <option value="Lightning Grenade">Lighting Grenade</option>
                             <option value="Pulse Grenade">Pulse Grenade</option>
                             <option value="Flashbang Grenade">Flashbang Grendade</option>
-                        </select>
-                        <select name="grenade" id="voidGrenade">
-                            <option value="" disabled selected>Grenade</option>
+                            <option value="" disabled>-Solar Grenades-</option>
+                            <option value="Thermite Grenade">Thermite Grenade</option>
+                            <option value="Incindiary Grenade">Incindiary Grenade</option>
+                            <Option value="Fusion Grenade">Fusion Grenade</Option>
+                            <option value="" disabled>-Void Grenades-</option>
                             <option value="Voidwall Grenade">Voidwall Grenade</option>
                             <option value="Magnetic Grennade">Magnetic Grenade</option>
-                            <option value="Supressor Grenade">Supressor Grenade</option>                          
+                            <option value="Supressor Grenade">Supressor Grenade</option>
+                            <option value="" disabled>-Statis Grenades-</option>
+                            <option value="Glacier Grenade">Glacier Grenade</option>
+                            <option value="Duskfield Grenade">Duskfield Grenade</option>
+                            <option value="Coldsnap Grenade">Cold Snap Grenade</option>
                         </select>
-                        <select name="grenade" id="solarGrenade">
-                            <option value="" disabled selected>Grenade</option>
-                            <option value="Thermite Grenade">Thermite Grenade</option>
-                            <option value="Incindoary Grenade">Incindoary Grenade</option>
-                            <Option value="Fusion Grenade">Fusion Grenade</Option>
+                        <select name="classAbility" id="classAbilityTitan">
+                            <option value="" disabled selected>Class Ability</option>
+                            <option value="Towering Barricade">Towering Barricade</option>
+                            <option value="Rally Barricade">Rally Barricade</option>
+                        </select>
+                        <select name="jump" id="jumpTitan">
+                            <option value="" disabled selected>Jump</option>
+                            <option value="High Lift">High Lift</option>
+                            <option value="Strafe Lift">Strafe Lift</option>
+                            <option value="Catapult Lift">Catapult Lift</option>
                         </select>
                     </div>
-                    <div id="subClassHunter"> <select name="subClass">
-                            <option value="" disabled selected>Hunter Subclass</option>
-                            <option value="Way of the Outlaw">Way of the Outlaw</option>
-                            <option value="Way of the Sharpshooter">Way of the Sharpshooter</option>
-                            <option value="Way of a Thousand Cuts">Way of a Thousand Cuts</option>
+                    <div id="subClassHunterDiv">
+                        <select name="subClass">
+                            <option value="" disabled selected>Subclass</option>
+                            <option value="" disabled>-Arc-</option>
                             <option value="Way of the Warrior">Way of the Warrior</option>
                             <option value="Way of the Current">Way of the Current</option>
                             <option value="Way of the Wind">Way of the Wind</option>
+                            <option value="" disabled>-Solar-</option>
+                            <option value="Way of the Outlaw">Way of the Outlaw</option>
+                            <option value="Way of the Sharpshooter">Way of the Sharpshooter</option>
+                            <option value="Way of a Thousand Cuts">Way of a Thousand Cuts</option>
+                            <option value="" disabled>-Void-</option>
                             <option value="Way of the Trapper">Way of the Trapper</option>
                             <option value="Way of the Pathfinder">Way of the Pathfinder</option>
                             <option value="Way of the Wraith">Way of the Wraith</option>
+                            <option value="" disabled>-Stasis-</option>
                             <option value="Revenant">Revenant</option>
                         </select>
+                        <select name="grenade" id="arcHunterGrenade">
+                            <option value="" disabled selected>Grenade</option>
+                            <option value="" disabled>-Arc Grenades-</option>
+                            <option value="Arcbolt Grenade">Arcbolt Grenade</option>
+                            <option value="Flux Grenade">Flux Grenade</option>
+                            <option value="Skip Grenade">Skip Grendade</option>
+                            <option value="" disabled>-Solar Grenades-</option>
+                            <option value="Swarm Grenade">Swarm Grenade</option>
+                            <option value="Incindiary Grenade">Incindary Grenade</option>
+                            <Option value="Tripmine Grenade">Tripmine Grenade</Option>
+                            <option value="" disabled>-Void Grenades-</option>
+                            <option value="Voidwall Grenade">Voidwall Grenade</option>
+                            <option value="Spike Grennade">Spike Grenade</option>
+                            <option value="Vortex Grenade">Vortex Grenade</option>
+                            <option value="" disabled>-Statis Grenades-</option>
+                            <option value="Glacier Grenade">Glacier Grenade</option>
+                            <option value="Duskfield Grenade">Duskfield Grenade</option>
+                            <option value="Coldsnap Grenade">Cold Snap Grenade</option>
+
+
+                        </select>
+                        <select name="classAbility" id="classAbilityHunter">
+                            <option value="" disabled selected>Class Ability</option>
+                            <option value="Gambler's Dodge">Gambler's Dodge</option>
+                            <option value="Marksman's Dodge">Marksman's Dodge</option>
+                        </select>
+                        <select name="jump" id="jumpHunter">
+                            <option value="" disabled selected>Jump</option>
+                            <option value="High Jump">High Jump</option>
+                            <option value="Strafe Jump">Strafe Jump</option>
+                            <option value="Tripple Jump">Tripple Jump</option>
+                        </select>
                     </div>
-                    <div id="subClassWarlock"> <select name="subClass">
-                            <option value="" disable selected>Warlock Subclass</option>
-                            <option value="Attunement of Sky">Attunement of Sky</option>
-                            <option value="Attunement of Flame">Attunement of Flame</option>
-                            <option value="Attunement of Grace">Attunement of Grace</option>
+                    <div id="subClassWarlockDiv">
+                        <select name="subClass">
+                            <option value="" disable selected>Subclass</option>
+                            <option value="" disabled>-Arc-</option>
                             <option value="Attunement of Conduction">Attunement of Conduction</option>
                             <option value="Attunement of Elements">Attunement of Elements</option>
                             <option value="Attunement of Control">Attunement of Control</option>
+                            <option value="" disabled>-Solar-</option>
+                            <option value="Attunement of Sky">Attunement of Sky</option>
+                            <option value="Attunement of Flame">Attunement of Flame</option>
+                            <option value="Attunement of Grace">Attunement of Grace</option>
+                            <option value="" disabled>-Void-</option>
                             <option value="Attunement of Chaos">Attunement of Chaos</option>
                             <option value="Attunement of Hunger">Attunement of Hunger</option>
                             <option value="Attunement of Fission">Attunement of Fission</option>
+                            <option value="" disabled>-Stasis-</option>
                             <option value="Shadebinder">Shadebinder</option>
                         </select>
+                        <select name="grenade" id="arcHunterGrenade">
+                            <option value="" disabled selected>Grenade</option>
+                            <option value="" disabled>-Arc Grenades-</option>
+                            <option value="Arcbolt Grenade">Arcbolt Grenade</option>
+                            <option value="Pulse Grenade">Pulse Grenade</option>
+                            <option value="Storm Grenade">Storm Grendade</option>
+                            <option value="" disabled>-Solar Grenades-</option>
+                            <option value="Solar Grenade">Solar Grenade</option>
+                            <option value="Firebolt Grenade">Firebolt Grenade</option>
+                            <Option value="Fusion Grenade">Fusion Grenade</Option>
+                            <option value="" disabled>-Void Grenades-</option>
+                            <option value="Vortex Grenade">Vortex Grenade</option>
+                            <option value="Axion Grennade">Axion Grenade</option>
+                            <option value="Scatter Grenade">Scatter Grenade</option>
+                            <option value="" disabled>-Statis Grenades-</option>
+                            <option value="Glacier Grenade">Glacier Grenade</option>
+                            <option value="Duskfield Grenade">Duskfield Grenade</option>
+                            <option value="Coldsnap Grenade">Cold Snap Grenade</option>
+                        </select>
+                        <select name="classAbility" id="classAbilityWarlock">
+                            <option value="" disabled selected>Class Ability</option>
+                            <option value="Healing Rift">Healing Rift</option>
+                            <option value="Empowering Rift">Empowering Rift</option>
+                        </select>
+                        <select name="jump" id="jumpWarlock">
+                            <option value="" disabled selected>Jump</option>
+                            <option value="Strafe Glide">Strafe Glide</option>
+                            <option value="Burst Glide">Burst Glide</option>
+                            <option value="Balanced Glide">Balanced Glide</option>
+                        </select>
                     </div>
+                    <div id="mainLoadoutInputDiv">
+                        <label for="weapons">Weapons:</label>
+                        <input type="text" name="keneticWeapon" placeholder="Kenetic Weapon">
+                        <input type="text" name="keneticWeaponMod" placeholder="Keneitc Weapon Mod">
+                        <input type="text" name="energyWeapon" placeholder="Energy Weapon">
+                        <input type="text" name="energyWeaponMod" placeholder="Energy Weapon Mod">
+                        <input type="text" name="heavyWeapon" placeholder="Heavy Weapon">
+                        <input type="text" name="heavyWeaponMod" placeholder="Heavy Weapon Mod">
+                        <label for="armor">Helmet:</label>
+
+                        <input type="text" name="helmet" placeholder="Armour Name">
+                        <select name="helmetEnergyType">
+                            <option value="" disabled selected>Helmet Energy Type</option>
+                            <option value="Arc">Arc</option>
+                            <option value="Solar">Solar</option>
+                            <option value="Void">Void</option>
+                            <option value="Stasis">Stasis</option>
+                        </select>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="number" name="helmetMobility" placeholder="Helmet Mobility">
+                            <input type="number" name="helmetResilience" placeholder="Helmet Resilience">
+                            <input type="number" name="helmetRecovery" placeholder="Helmet Recovery">
+                            <input type="number" name="helmetDiscipline" placeholder="Helmet Discipline">
+                            <input type="number" name="helmetIntelect" placeholder="Helmet Intelect">
+                            <input type="number" name="helmetStrength" placeholder="Helmet Strength">
+                        </fieldset>
+                        <fieldset id="loadoutField2" class="row">
+                            <input type="text" name="helmMod1" placeholder="Helmet Mod 1">
+                            <input type="text" name="helmMod2" placeholder="Helmet Mod 2">
+                            <input type="text" name="helmMod3" placeholder="Helmet Mod 3">
+                            <input type="text" name="helmMod4" placeholder="Helmet Mod 4">
+                            <input type="text" name="helmMod5" placeholder="Helmet Mod 5">
+                        </fieldset>
+
+                        <label for="gloves">Gloves:</label>
+                        <input type="text" name="glove" placeholder="Armour Name">
+                        <select name="gloveEnergyType">
+                            <option value="" disabled selected>Glove Energy Type</option>
+                            <option value="Arc">Arc</option>
+                            <option value="Solar">Solar</option>
+                            <option value="Void">Void</option>
+                            <option value="Stasis">Stasis</option>
+                        </select>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="number" name="gloveMobility" placeholder="Glove Mobility">
+                            <input type="number" name="gloveResilience" placeholder="Glove Resilience">
+                            <input type="number" name="gloveRecovery" placeholder="Glove Recovery">
+                            <input type="number" name="gloveDiscipline" placeholder="Glove Discipline">
+                            <input type="number" name="gloveIntelect" placeholder="Glove Intelect">
+                            <input type="number" name="gloveStrength" placeholder="Glove Strength">
+                        </fieldset>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="text" name="gloveMod1" placeholder="Glove Mod 1">
+                            <input type="text" name="gloveMod2" placeholder="Glove Mod 2">
+                            <input type="text" name="gloveMod3" placeholder="Glove Mod 3">
+                            <input type="text" name="gloveMod4" placeholder="Glove Mod 4">
+                            <input type="text" name="gloveMod5" placeholder="Glove Mod 5">
+                        </fieldset>
+                        <label for="Chest">Chest:</label>
+                        <input type="text" name="chest" placeholder="Arour Name">
+                        <select name="chestEnergyType">
+                            <option value="" disabled selected>Chest Energy Type</option>
+                            <option value="Arc">Arc</option>
+                            <option value="Solar">Solar</option>
+                            <option value="Void">Void</option>
+                            <option value="Stasis">Stasis</option>
+                        </select>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="number" name="chestMobility" placeholder="Chest Mobility">
+                            <input type="number" name="chestResilience" placeholder="Chest Resilience">
+                            <input type="number" name="chestRecovery" placeholder="Chest Recovery">
+                            <input type="number" name="chestDiscipline" placeholder="Chest Discipline">
+                            <input type="number" name="chestIntelect" placeholder="Chest Intelect">
+                            <input type="number" name="chestStrength" placeholder="Chest Strength">
+                        </fieldset>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="text" name="chestMod1" placeholder="Chest Mod 1">
+                            <input type="text" name="chestMod2" placeholder="Chest Mod 2">
+                            <input type="text" name="chestMod3" placeholder="Chest Mod 3">
+                            <input type="text" name="chestMod4" placeholder="Chest Mod 4">
+                            <input type="text" name="chestMod5" placeholder="Chest Mod 5">
+                        </fieldset>
+                        <label for="boots">Boots:</label>
+                        <input type="text" name="boot" placeholder="Armour Name">
+                        <select name="bootEnergyType">
+                            <option value="" disabled selected>Boot Energy Type</option>
+                            <option value="Arc">Arc</option>
+                            <option value="Solar">Solar</option>
+                            <option value="Void">Void</option>
+                            <option value="Stasis">Stasis</option>
+                        </select>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="number" name="bootMobility" placeholder="Boot Mobility">
+                            <input type="number" name="bootResilience" placeholder="Boot Resilience">
+                            <input type="number" name="bootRecovery" placeholder="Boot Recovery">
+                            <input type="number" name="bootDiscipline" placeholder="Boot Discipline">
+                            <input type="number" name="bootIntelect" placeholder="Boot Intelect">
+                            <input type="number" name="bootStrength" placeholder="Boot Strength">
+                        </fieldset>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="text" name="bootMod1" placeholder="Boot Mod 1">
+                            <input type="text" name="bootMod2" placeholder="Boot Mod 2">
+                            <input type="text" name="bootMod3" placeholder="Boot Mod 3">
+                            <input type="text" name="bootMod4" placeholder="Boot Mod 4">
+                            <input type="text" name="bootMod5" placeholder="Boot Mod 5">
+                        </fieldset>
+                        <label for="Class Item">Class Item:</label>
+                        <input type="text" name="classItem" placeholder="Armour Name">
+                        <select name="classItemEnergyType">
+                            <option value="" disabled selected>Class Item Energy Type</option>
+                            <option value="Arc">Arc</option>
+                            <option value="Solar">Solar</option>
+                            <option value="Void">Void</option>
+                            <option value="Stasis">Stasis</option>
+                        </select>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="number" name="classItemMobility" placeholder="Class Item Mobility">
+                            <input type="number" name="classItemResilience" placeholder="Class Item Resilience">
+                            <input type="number" name="classItemRecovery" placeholder="Class Item Recovery">
+                            <input type="number" name="classItemDiscipline" placeholder="Class Item Discipline">
+                            <input type="number" name="classItemIntelect" placeholder="Class Item Intelect">
+                            <input type="number" name="classItemStrength" placeholder="Class Item Strength">
+                        </fieldset>
+                        <fieldset id="loadoutField" class="row">
+                            <input type="text" name="classItemMod1" placeholder="Class Item Mod 1">
+                            <input type="text" name="classItemMod2" placeholder="Class Item Mod 2">
+                            <input type="text" name="classItemMod3" placeholder="Class Item Mod 3">
+                            <input type="text" name="classItemMod4" placeholder="Class Item Mod 4">
+                            <input type="text" name="classItemMod5" placeholder="Class Item Mod 5">
+                        </fieldset>
+                        <input type="submit" value="Create New Loadout">
+                    </div>
+                </form>
 
 
-    </body>
-    <script>
-        $(document).ready(function () {
-            $("#class").change(function () {
-                $("#subClassTitan").toggle();
-            });
-        });
-        $(document).ready(function () {
-            $("#subClassTitan").change(function () {
-                $("#arcGrenade").toggle()
-            })
-        })
-    </script>
-    </div>
-    </main>
+                </div>
+
+
+
+
+                </div>
+            </main>
     </body>
 
 </html>

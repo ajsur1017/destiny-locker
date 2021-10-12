@@ -36,35 +36,65 @@ router.get("/newLoadout", (req, res) => {
 router.get("/newFashion", (req, res) => {
     res.render("guardian/newFashion.ejs")
 })
-
+// POST route for fashion
 router.post("/indexFashion", (req, res) => {
     req.body.username = req.session.username
     GuardianFashion.create(req.body, (err, guardianFashion) => {
         res.redirect("/guardian/indexFashion")
     })
 })
-
+// POST route for loadout
+router.post("/indexLoadout", (req, res) => {
+    req.body.username = req.session.username
+    Guardian.create(req.body, (err, guardian) => {
+        res.redirect("/guardian/indexLoadout")
+    })
+})
+// EDIT ROUTES
+// FASHION EDIT
 router.get("/:id/edit", (req, res) => {
     const id = req.params.id 
-    Guardian.findById(id, (err, Guardian) => {
-        res.render("guardian/edit.ejs", { guardian })
+    GuardianFashion.findById(id, (err, guardianFashion) => {
+        res.render("guardian/editFashion.ejs", { guardianFashion })
     })
 })
 
 router.put("/:id", (req, res) => {
     const id = req.params.id
-    Guardian.findByIdAndUpdate(id, req.body, { new: true }, (err, guardian) => {
-        res.redirect("/guardian")
+    GuardianFashion.findByIdAndUpdate(id, req.body, { new: true }, (err, guardianFashion) => {
+        res.redirect("/guardian/indexFashion")
     })
 })
+// // LOADOUT EDIT
+// router.get("guardian/loadout/:id/edit", (req, res) => {
+//     const id = req.params.id 
+//     Guardian.findById(id, (err, guardian) => {
+//         res.render("guardian/editLoadout.ejs", { guardian })
+//     })
+// })
+
+// router.put("/:id", (req, res) => {
+//     const id = req.params.id
+//     Guardian.findByIdAndUpdate(id, req.body, { new: true }, (err, guardian) => {
+//         res.redirect("/guardian/indexLoadout")
+//     })
+// })
+// DELETE ROUTES
+// HOW DOES IT KNOW WHAT ONE TO USE? DOES IT TRY BOTH???Î›
 
 router.delete("/:id", (req, res) => {
     const id = req.params.id
     Guardian.findByIdAndRemove(id, (err, guardian) => {
-        res.redirect("/guardian")
+        res.redirect("/guardian/indexLoadout")
     })
 })
-
+router.delete("/:id", (req, res) => {
+    const id = req.params.id
+    GuardianFashion.findByIdAndRemove(id, (err, guardianFashion) => {
+        res.redirect("/guardian/indexFashion")
+    })
+})
+// SHOW ROUTES
 router.get("/loadout/:id", (req, res) => {
     const id = req.params.id
     Guardian.findById(id, (err, guardian) => {
